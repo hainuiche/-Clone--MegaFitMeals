@@ -1,0 +1,271 @@
+
+
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Công cụ tính TDEE | TDEE Calculator (Total Daily Energy Expenditure)</title>
+        <meta name="description" content="Công cụ tính chỉ số TDEE đơn giản và chính xác nhất cho các bạn tập gym, xem cách tính TDEE ngay thôi nào.">
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="./TDEE.css">
+		<link rel="icon" type="image/png" href="http://cdn.thehinh.com/2017/12/th.png">
+    </head>
+    <body>
+        <header>
+            <div class="container ta-c">
+                <h1><a href="http://www.thehinh.com" class="c-blue">Công cụ tính TDEE</a></h1>
+                <h2>Hỗ trợ đắc lực cho bạn trong hành trình tập luyện!</h2>
+            </div>
+        </header>
+        <main>
+            <div class="container">
+                <div class="row">
+                    <div id="messages" class="col-xs-12"></div>
+                </div>
+                <div class="row">
+                    <div id="calculator" class="col-md-6">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <div class="panel-title">
+                                    Nhập thông tin của bạn vào nhé
+                                    <div class="pull-right">
+									<label for="metric">
+                                            <input type="radio" id="metric" name="units" value="metric" checked> Tính theo châu Á
+                                        </label>
+                                        <label for="imperial">
+                                            <input type="radio" id="imperial" name="units" value="imperial" > Tính theo châu Âu
+                                        </label>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel-body">
+                                <form class="form-horizontal">
+                                    <div class="form-group">
+                                        <label for="gender" class="col-xs-3 control-label">Giới tính</label>
+                                        <div class="col-xs-9">
+                                            <div class="btn-group" role="group" aria-label="Gender">
+                                                <label for="male" class="btn btn-default"><input class="hide" type="radio" name="gender" id="male" value="male" required>Nam</label>
+                                                <label for="female" class="btn btn-default"><input class="hide" type="radio" name="gender" id="female" value="female" required>Nữ</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-xs-3 control-label">Tuổi</label>
+                                        <div class="col-xs-9">
+                                            <div class="input-group" data-toggle="tooltip" data-trigger="focus" title="Sử dụng &uarr; và  &darr; để thay đổi" data-placement="right">
+                                              <input name="yr" type="number" class="form-control" pattern="\d*" placeholder="" aria-describedby="addon_yr" required min="1">
+                                              <span class="input-group-addon" id="addon_yr">năm</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-xs-3 control-label">Chiều Cao</label>
+                                        <div class="col-xs-9">
+                                            <div class="input-group hide" data-unit="metric" data-toggle="tooltip" data-trigger="focus"  data-placement="right">
+                                              <input name="cm" type="number" step="any" class="form-control" pattern="\d*" placeholder="" aria-describedby="addon_cm" min="1">
+                                              <span class="input-group-addon" id="addon_cm">cm</span>
+                                            </div>
+                                            <div class="input-group" data-unit="imperial" data-toggle="tooltip" data-trigger="focus"  data-placement="top">
+                                              <input name="ft" type="number" class="form-control" pattern="\d*" placeholder="" aria-describedby="addon_ft" min="1">
+                                              <span class="input-group-addon" id="addon_ft">ft</span>
+                                            </div>
+                                            <div class="input-group" data-unit="imperial" data-toggle="tooltip" data-trigger="focus"  data-placement="top">
+                                              <input name="in" type="number" step="any" class="form-control" pattern="\d*" placeholder="" aria-describedby="addon_in" min="0" max="11.9" value="0">
+                                              <span class="input-group-addon" id="addon_in">in</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-xs-3 control-label">Cân nặng</label>
+                                        <div class="col-xs-9">
+                                            <div class="input-group hide" data-unit="metric" data-toggle="tooltip" data-trigger="focus"  data-placement="right">
+                                              <input name="kg" type="number" step="any" class="form-control" pattern="\d*" placeholder="" aria-describedby="addon_kg" min="0">
+                                              <span class="input-group-addon" id="addon_kg">kg</span>
+                                            </div>
+                                            <div class="input-group" data-unit="imperial" data-toggle="tooltip" data-trigger="focus"  data-placement="right">
+                                              <input name="lbs" type="number" step="any" class="form-control" pattern="\d*" placeholder="" aria-describedby="addon_lbs" min="0">
+                                              <span class="input-group-addon" id="addon_lbs">lbs</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div id="formula" class="form-group">
+                                        <label class="col-xs-3 control-label">Tính theo</label>
+                                        <div class="col-xs-9">
+                                            <div class="btn-group">
+                                                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    <span id="formula_val">Thông thường</span> <span class="caret"></span>
+                                                </button>
+                                                <ul class="dropdown-menu">
+                                                    <li class="active"><a href="#formula_val" data-value="standard"><b>Thông thường</b></a></li>
+                                                    <li><a href="#formula_val" data-value="bfp"><b>Phần trăm Body Fat </b></a></li>
+                                                </ul>
+                                                <!-- <a href="#" role="button" data-toggle="popover" data-placement="top" class="btn btn-link" id="standard_popover" title="<b>Thông thường</b>" data-content="Dành cho các bạn không biết chỉ số Body Fat của mình là bao nhiêu">Nghĩa là gì ?</a> -->
+                                                <a href="#" role="button" data-toggle="popover" data-placement="top" class="btn btn-link hide" id="bfp_popover" title="<b>Body Fat là gì ?</b>" data-content="Sẽ chính xác hơn nếu bạn biết được chỉ số Body Fat của mình là bao nhiêu đặc biệt là những người thừa cân. Phương pháp này sử dụng công thức của Katch McArdle để tính toán TDEE và BMR của bạn.<br><br><a class='btn btn-link btn-block' href='http://www.thehinh.com/2016/02/cong-cu-tinh-body-fat.html#tinh' target='_blank'>Đi tính Body Fat trước</a>">Chi tiết</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div id="body_fat" class="hide">
+                                        <div class="form-group">
+                                            <label class="col-xs-3 control-label">Body Fat %</label>
+                                            <div class="col-xs-9">
+                                                <div class="input-group" data-toggle="tooltip" data-trigger="focus"  data-placement="right">
+                                                  <input name="bfp" type="number" step="any" class="form-control" pattern="\d*" placeholder="" aria-describedby="addons_percentage" min="0">
+                                                  <span class="input-group-addon" id="addons_percentage">%</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div id="exercise" class="form-group">
+                                        <label class="col-xs-3 control-label">Cường độ tập luyện</label>
+                                        <div class="col-xs-9">
+                                            <div class="btn-group">
+                                                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    <span id="exercise_val">Ít vận động</span> <span class="caret"></span>
+                                                </button>
+                                                <ul class="dropdown-menu">
+                                                    <li class="active"><a href="#exercise_val" data-value="sedentary"><b>Ít vận động</b> &nbsp;<small>không tập luyện/nhân viên văn phòng</small></a></li>
+                                                    <li><a href="#exercise_val" data-value="lightly"><b>Vận động nhẹ</b> &nbsp;<small>Tập luyện 1-3 lần/tuần</small></a></li>
+                                                    <li><a href="#exercise_val" data-value="moderately"><b>Vận động vừa</b> &nbsp;<small>Tập luyện 3-5 ngày/tuần</small></a></li>
+                                                    <li><a href="#exercise_val" data-value="very"><b>Vận động nhiều</b> &nbsp;<small>Tập luyện 6-7 ngày/tuần</small></a></li>
+                                                    <li><a href="#exercise_val" data-value="extremely"><b>Hoạt động cực nhiều</b> &nbsp;<small>Ngày tập 2 lần/Là vận động viên</small></a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="goal" class="col-xs-3 control-label">Mục tiêu của bạn</label>
+                                        <div class="col-xs-9">
+                                            <div class="btn-group" role="group" aria-label="Gender">
+                                                <label for="lose" class="btn btn-default"><input class="hide" type="radio" name="goal" id="lose" value="lose">Giảm mỡ</label>
+                                                <label for="maintain" class="btn btn-default"><input class="hide" type="radio" name="goal" id="maintain" value="maintain">Duy trì hiện tại</label>
+                                                <label for="gain" class="btn btn-default"><input class="hide" type="radio" name="goal" id="gain" value="gain">Tăng cân</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div id="goal_weight" class="form-group hide">
+                                        <label class="col-xs-3 control-label">Mục tiêu cân nặng</label>
+                                        <div class="col-xs-9">
+                                            <div class="input-group hide" data-unit="metric" data-toggle="tooltip" data-trigger="focus"  data-placement="right">
+                                              <input name="goal_kg" type="number" step="any" class="form-control" pattern="\d*" placeholder="" aria-describedby="addon_goal_kg" min="0">
+                                              <span class="input-group-addon" id="addon_goal_kg">kg</span>
+                                            </div>
+                                            <div class="input-group" data-unit="imperial" data-toggle="tooltip" data-trigger="focus"  data-placement="right">
+                                              <input name="goal_lbs" type="number" step="any" class="form-control" pattern="\d*" placeholder="" aria-describedby="addon_goal_lbs" min="0">
+                                              <span class="input-group-addon" id="addon_goal_lbs">lbs</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div id="lose_speed" class="form-group hide">
+                                        <label for="lose_speed" class="col-xs-3 control-label">Tốc độ</label>
+                                        <div class="col-xs-9">
+                                            <div class="btn-group" role="group" aria-label="Speed">
+                                                <label for="easy" class="btn btn-default" data-toggle="tooltip"><input class="hide" type="radio" name="lose_speed" id="easy" value="easy">Chậm</label>
+                                                <label for="recommended" class="btn btn-default" data-toggle="tooltip"><input class="hide" type="radio" name="lose_speed" id="recommended" value="recommended">Bình thường</label>
+                                                <label for="lose_aggressive" class="btn btn-default" data-toggle="tooltip"><input class="hide" type="radio" name="lose_speed" id="lose_aggressive" value="aggressive">Nhanh</label>
+                                                <label for="reckless" class="btn btn-default" data-toggle="tooltip"><input class="hide" type="radio" name="lose_speed" id="reckless" value="reckless">Cấp tốc</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div id="gain_speed" class="form-group hide">
+                                        <label for="lose_speed" class="col-xs-3 control-label">Bạn muốn tăng cân thế nào ?</label>
+                                        <div class="col-xs-9">
+                                            <div class="btn-group" role="group" aria-label="Speed">
+                                                <label for="cautious" class="btn btn-default"><input class="hide" type="radio" name="gain_speed" id="cautious" value="cautious">Chậm</label>
+                                                <label for="normal" class="btn btn-default"><input class="hide" type="radio" name="gain_speed" id="normal" value="normal">Bình thường</label>
+                                                <label for="gain_aggressive" class="btn btn-default"><input class="hide" type="radio" name="gain_speed" id="gain_aggressive" value="aggressive">Nhanh</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-xs-offset-3 col-xs-9">
+                                            <button type="submit" class="btn btn-success btn-lg col-sm-6">Tính TDEE</button>
+                                            <button type="reset" class="btn btn-link btn c-gray mt5">Xóa làm lại</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="results" class="col-md-6 ta-c c-gray">
+                        <div id="no_results_panel" class="panel v-center-wrap">
+                            <div class="v-center">
+							<img src="http://cdn.thehinh.com/2016/12/logo-the-hinh.png" width="300"></img>
+                                <h3>TDEE là gì ?</h3>
+                                <p style="text-align:justify"><strong>TDEE (Total Daily Energy Expenditure)</strong> nghĩa là lượng calo bạn sẽ đốt cháy trong 1 ngày, bao gồm cả ăn chơi ngủ nghỉ và tập luyện. <br />TDEE rất quan trọng trong việc giảm cân hay tăng cân hay tăng cơ vì nó giúp ta biết nên tiêu thụ bao nhiêu calo là đủ<br /> Công thức thức tính rất đơn giản và phù hợp với mọi đối tượng.
+                                <h4>Và đây là công cụ sẽ giúp bạn tính toán tự động</h4>
+                                <p>Công việc của bạn chỉ là nhập số liệu vào và bấm <strong>Tính TDEE</strong> mà thôi!</p>
+                                <a href="#calculator" class="visible-xs btn btn-link btn-lg">Bắt đầu tính TDEE</a>
+                            </div>
+                        </div>
+                        <div id="results_panel" class="panel panel-default hide">
+                            <div class="col-xs-12">
+                                <div id="results_tdee" class="panel panel-default v-center-wrap">
+                                    <div class="panel-body v-center">
+                                        <h3>TDEE của bạn là:</h3>
+                                        <div id="tdee_val" class="number">...</div>
+                                        <div class="caption">Calo 1 ngày</div>
+                                    </div>
+                                </div>
+                                <div id="results_bmr" class="panel panel-default hide">
+                                    <div class="panel-body">
+                                        <h3>BMR  của bạn là:</h3>
+                                        <div id="bmr_val" class="number">...</div>
+                                        <div class="caption">Calo 1 ngày</div>
+                                    </div>
+                                </div>
+                                <div id="results_goal" class="panel panel-default">
+                                    <div class="panel-heading">Lượng calo cần thiết để bạn <strong></strong></div>
+                                    <div class="panel-body">
+                                        <div id="goal_val" class="number">...</div>
+                                        <div class="caption">Calo 1 ngày <i class="hide glyphicon glyphicon-warning-sign text-danger text-lg" data-toggle="tooltip" title="Lượng calo khuyến cáo 1 ngày" data-placement="bottom"></i></div>
+                                    </div>
+                                </div>
+                                <div id="results_goal_date" class="panel panel-default hide">
+                                    <div class="panel-heading">Dự tính thời gian bạn sẽ giảm còn <strong></strong> là vào ngày:</div>
+                                    <div class="panel-body">
+                                        <div id="goal_date" class="number">...</div>
+                                        <div id="goal_date_weeks" class="caption"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+       
+<style>/* Three image containers (use 25% for four, and 50% for two, etc) */
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 5px;
+}
+
+/* Clear floats after image containers */
+.cot::after {
+  content: "";
+  clear: both;
+  display: table;
+  }
+  .cot {
+    width: 80%;
+    margin-left: 10%;
+}
+  @media screen and (max-width: 500px) {
+  .column {
+    width: 100%;
+  }
+  .cot {
+    width: 100%;
+	margin-left: 0px;
+    
+}
+}
+</style>
+        <!-- Main JS -->
+        <script src="TDEE.js"></script>
+    </body>
+</html>
