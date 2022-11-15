@@ -25,6 +25,7 @@
 .main_menu {
     display: flex;
     align-items: center;
+    gap: 10px !important;
 }
 
 #top .avia-font-entypo-fontello,
@@ -37,5 +38,19 @@ html body [data-av_iconfont='entypo-fontello']:before {
     font-size: 15px !important;
     padding: 10px 10px !important;
     height: fit-content !important;
+    border-radius: 6px !important;
     display: inline;
+}
+
+.main_menu .av-main-nav li a:hover {
+    background-color: #f7b930 !important;
+}
+
+#avia-menu {
+    display: flex;
+    gap: 10px;
+}
+
+.container_wrap_logo {
+    background-image: linear-gradient(#fbf6d6, #fff) !important;
 }
