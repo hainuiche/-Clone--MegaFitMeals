@@ -1,11 +1,15 @@
+:root {
+    --main: rgb(136, 197, 68);
+}
+
 .avia-menu-text {
-    color: #09b52f !important;
+    color: var(--main) !important;
     font-weight: 700;
 }
 
 .av-cart-counter {
     background-color: #f7b930 !important;
-    color: #09b52f;
+    color: var(--main);
 }
 
 .logo {
@@ -31,7 +35,7 @@
 #top .avia-font-entypo-fontello,
 body .avia-font-entypo-fontello,
 html body [data-av_iconfont='entypo-fontello']:before {
-    color: #09b52f !important;
+    color: var(--main) !important;
 }
 
 #top #header .av-main-nav > li > a {
@@ -53,4 +57,20 @@ html body [data-av_iconfont='entypo-fontello']:before {
 
 .container_wrap_logo {
     background-image: linear-gradient(#fbf6d6, #fff) !important;
+}
+
+.cover-slider {
+    min-height: 900px !important;
+}
+
+.get-started {
+    padding: 15px 30px;
+    background-color: var(--main);
+    color: white !important;
+    font-size: 15px;
+    border-radius: 6px;
+}
+
+.wpb_text_column.wpb_content_element p {
+    text-align: center;
 }
