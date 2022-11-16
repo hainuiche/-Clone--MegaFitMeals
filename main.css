@@ -74,3 +74,25 @@ html body [data-av_iconfont='entypo-fontello']:before {
 .wpb_text_column.wpb_content_element p {
     text-align: center;
 }
+
+::-webkit-scrollbar {
+    width: 4px;
+    height: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #fbf6d6;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #f67300;
+    border-radius: 10px;
+}
+
+HTML {
+    cursor: pointer;
+}
+
+body {
+    cursor: default;
+}

@@ -4,9 +4,254 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Document</title>
+        <title>Menu</title>
+        <link rel="icon" href="./assets/logo.png" type="image/x-icon" />
+        <link rel="stylesheet" type="text/css" href="./main.css" />
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link rel="stylesheet" type="text/css" href="./menu.css" />
+        <script>
+            tailwind.config = {
+                theme: {
+                    extend: {
+                        colors: {
+                            theme: '#F67300',
+                            ye: '#F8BA30',
+                            'ye-hov': '#fbf6d6',
+                            light: '#FFF9EB',
+                        },
+                    },
+                },
+            };
+        </script>
     </head>
     <body>
-        Menu
+        <div id="menu-container" class="h-full bg-gradient-to-b bg-[#fbf6d6] p-[30px]">
+            <div class="bg-[#fff] rounded-[30px] overflow-hidden flex h-full shadow-lg">
+                <div class="flex-1 space-y-[20px] py-[25px] pl-[25px] overflow-auto">
+                    <div class="flex gap-[20px] h-[44px]">
+                        <a
+                            class="w-[44px] rounded-[9px] flex-center bg-ye text-white cursor-pointer hover:bg-theme duration-300"
+                            href="./index.html"
+                        >
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke-width="1.5"
+                                stroke="currentColor"
+                                class="w-6 h-6"
+                            >
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25"
+                                />
+                            </svg>
+                        </a>
+                        <div
+                            class="p-[10px] flex gap-[8px] items-center bg-[#F2F2F2] rounded-[10px] flex-1 mr-[25px]"
+                        >
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke-width="1.5"
+                                stroke="currentColor"
+                                class="w-6 h-6 text-ye"
+                            >
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"
+                                />
+                            </svg>
+                            <input
+                                type="text"
+                                placeholder="Tìm kiếm"
+                                class="bg-transparent focus:outline-none w-full"
+                            />
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-[6px] font-semibold">
+                        <span class="text-gray-400">Sincere</span>
+                        <span class="text-ye">&bull;</span>
+                        <span class="text-[#333]">Healthy food</span>
+                    </div>
+                    <div class="pr-[25px]">
+                        <div class="h-[100px] rounded-[15px] overflow-hidden w-full relative">
+                            <img
+                                src="./assets/menu-cover.webp"
+                                class="w-full h-full object-cover"
+                            />
+                            <div
+                                class="absolute inset-0 bg-[#303048] bg-opacity-80 p-[20px] flex items-center justify-between"
+                            >
+                                <div class="flex gap-[20px] items-center">
+                                    <img
+                                        class="object-cover w-[60px] h-[60px] rounded-full bg-white"
+                                        src="./assets/logo.png"
+                                    />
+                                    <div class="text-white space-y-[8px]">
+                                        <p class="text-[24px] leading-[24px] font-semibold">
+                                            Sincere
+                                        </p>
+                                        <p class="text-[14px] leading-[14px]">
+                                            Bữa ăn cho vóc dáng và dinh dưỡng
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center space-x-[30px]">
+                                    <div class="space-y-[8px]">
+                                        <p class="text-ye text-[24px] leading-[24px] font-semibold">
+                                            9
+                                        </p>
+                                        <p class="text-white text-[14px] leading-[14px]">Món ăn</p>
+                                    </div>
+                                    <div class="h-[20px] w-[1px] bg-white"></div>
+                                    <div class="space-y-[8px]">
+                                        <p class="text-ye text-[24px] leading-[24px] font-semibold">
+                                            4
+                                        </p>
+                                        <p class="text-white text-[14px] leading-[14px]">
+                                            Danh mục
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="rounded-[10px] w-full flex overflow-auto overflow-y-hidden pr-[25px] pb-[25px]"
+                    >
+                        <div class="w-auto flex gap-[20px]">
+                            <div
+                                class="h-full rounded-[30px] border border-solid border-ye w-[250px] bg-light hover:bg-ye cursor-pointer duration-300 p-[20px] flex flex-col gap-[16px]"
+                            >
+                                <img
+                                    class="rounded-[15px] w-full h-[150px] object-cover shadow-[0_1px_15px_yellow]"
+                                    src="./assets/com gao lut bo nuong sot cay.jpg"
+                                />
+                                <p
+                                    class="text-[15px] leading-[17px] font-semibold flex-1 text-center"
+                                >
+                                    Cơm gạo lứt bò nướng sốt cay
+                                </p>
+                            </div>
+                            <div
+                                class="h-full rounded-[30px] border border-solid border-ye w-[250px] bg-light hover:bg-ye cursor-pointer duration-300 p-[20px] flex flex-col gap-[16px]"
+                            >
+                                <img
+                                    class="rounded-[15px] w-full h-[150px] object-cover shadow-[0_1px_15px_yellow]"
+                                    src="./assets/com la chanh bo nuong sot bo.jpg"
+                                />
+                                <p
+                                    class="text-[15px] leading-[17px] font-semibold flex-1 text-center"
+                                >
+                                    Cơm lá chanh bò nướng sốt bơ
+                                </p>
+                            </div>
+                            <div
+                                class="h-full rounded-[30px] border border-solid border-ye w-[250px] bg-light hover:bg-ye cursor-pointer duration-300 p-[20px] flex flex-col gap-[16px]"
+                            >
+                                <img
+                                    class="rounded-[15px] w-full h-[150px] object-cover shadow-[0_1px_15px_yellow]"
+                                    src="./assets/com la chanh ga bbq sot cay.jpg"
+                                />
+                                <p
+                                    class="text-[15px] leading-[17px] font-semibold flex-1 text-center"
+                                >
+                                    Cơm lá chanh gà BBQ sốt cay
+                                </p>
+                            </div>
+                            <div
+                                class="h-full rounded-[30px] border border-solid border-ye w-[250px] bg-light hover:bg-ye cursor-pointer duration-300 p-[20px] flex flex-col gap-[16px]"
+                            >
+                                <img
+                                    class="rounded-[15px] w-full h-[150px] object-cover shadow-[0_1px_15px_yellow]"
+                                    src="./assets/khoai lang ga ngu vi sot ngot.jpg"
+                                />
+                                <p
+                                    class="text-[15px] leading-[17px] font-semibold flex-1 text-center"
+                                >
+                                    Khoai lang gà ngũ vị sốt ngọt
+                                </p>
+                            </div>
+                            <div
+                                class="h-full rounded-[30px] border border-solid border-ye w-[250px] bg-light hover:bg-ye cursor-pointer duration-300 p-[20px] flex flex-col gap-[16px]"
+                            >
+                                <img
+                                    class="rounded-[15px] w-full h-[150px] object-cover shadow-[0_1px_15px_yellow]"
+                                    src="./assets/khoai tay nghien bo nuong sot bo.jpg"
+                                />
+                                <p
+                                    class="text-[15px] leading-[17px] font-semibold flex-1 text-center"
+                                >
+                                    Khoai tây nghiền bò nướng sốt bơ
+                                </p>
+                            </div>
+                            <div
+                                class="h-full rounded-[30px] border border-solid border-ye w-[250px] bg-light hover:bg-ye cursor-pointer duration-300 p-[20px] flex flex-col gap-[16px]"
+                            >
+                                <img
+                                    class="rounded-[15px] w-full h-[150px] object-cover shadow-[0_1px_15px_yellow]"
+                                    src="./assets/khoai tay nghien ga bbq sot ngot.jpg"
+                                />
+                                <p
+                                    class="text-[15px] leading-[17px] font-semibold flex-1 text-center"
+                                >
+                                    Khoai tây nghiền gà BBQ sốt ngọt
+                                </p>
+                            </div>
+                            <div
+                                class="h-full rounded-[30px] border border-solid border-ye w-[250px] bg-light hover:bg-ye cursor-pointer duration-300 p-[20px] flex flex-col gap-[16px]"
+                            >
+                                <img
+                                    class="rounded-[15px] w-full h-[150px] object-cover shadow-[0_1px_15px_yellow]"
+                                    src="./assets/pasta bo nuong sot kem.jpg"
+                                />
+                                <p
+                                    class="text-[15px] leading-[17px] font-semibold flex-1 text-center"
+                                >
+                                    Pasta bò nướng sốt kem
+                                </p>
+                            </div>
+                            <div
+                                class="h-full rounded-[30px] border border-solid border-ye w-[250px] bg-light hover:bg-ye cursor-pointer duration-300 p-[20px] flex flex-col gap-[16px]"
+                            >
+                                <img
+                                    class="rounded-[15px] w-full h-[150px] object-cover shadow-[0_1px_15px_yellow]"
+                                    src="./assets/mon chay.jpg"
+                                />
+                                <p
+                                    class="text-[15px] leading-[17px] font-semibold flex-1 text-center"
+                                >
+                                    Món chay
+                                </p>
+                            </div>
+                            <div
+                                class="h-full rounded-[30px] border border-solid border-ye w-[250px] bg-light hover:bg-ye cursor-pointer duration-300 p-[20px] flex flex-col gap-[16px]"
+                            >
+                                <img
+                                    class="rounded-[15px] w-full h-[150px] object-cover shadow-[0_1px_15px_yellow]"
+                                    src="./assets/donut.jpg"
+                                />
+                                <p
+                                    class="text-[15px] leading-[17px] font-semibold flex-1 text-center"
+                                >
+                                    Donut
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div></div>
+                </div>
+                <div class="w-[30%] rounded-[30px] shadow-[0_1px_100px_1px_rgba(0,0,0,0.1)]">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </div>
+        </div>
     </body>
 </html>
