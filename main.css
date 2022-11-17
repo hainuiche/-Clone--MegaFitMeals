@@ -1,5 +1,5 @@
 :root {
-    --main: rgb(136, 197, 68);
+    --main: #88c544;
 }
 
 .avia-menu-text {
@@ -95,4 +95,8 @@ HTML {
 
 body {
     cursor: default;
+}
+
+.menu-shadow {
+    box-shadow: rgb(247, 184, 48, 0.5) 0px 4px 25px 1px;
 }
