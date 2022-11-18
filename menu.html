@@ -2405,6 +2405,7 @@ PLAu:64
                                 </p>
                             </div>
                             <div
+                                id="4"
                                 class="detail-dish h-full rounded-[30px] border border-solid border-ye w-[240px] bg-light group hover:bg-ye cursor-pointer duration-300 p-[20px] pb-[10px] flex flex-col gap-[8px]"
                             >
                                 <img
@@ -2714,7 +2715,7 @@ PLAu:64
         <div class="fixed inset-0 h-full w-full z-[1000]" id="root-modal">
             <div class="inset-0 h-full w-full bg-gray-500 bg-opacity-50"></div>
             <div
-                class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 px-[20px] pb-[20px] pt-[50px] bg-white rounded-[20px] h-[700px] w-[500px] shadow-lg"
+                class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 px-[20px] pb-[20px] pt-[50px] bg-white rounded-[20px] w-[500px] shadow-lg"
             >
                 <div
                     class="h-[40px] w-[40px] flex-center hover:bg-drop duration-300 rounded-[10px] absolute top-[5px] right-[5px] cursor-pointer"
@@ -2750,13 +2751,18 @@ PLAu:64
                                 class="w-1/2 h-auto rounded-[10px]"
                                 src="./assets/com gao lut bo nuong sot cay.jpg"
                             />
-                            <ul class="calo"></ul>
+                            <ul
+                                class="calo flex flex-col ml-[30px] font-semibold text-main mb-0 gap-[10px]"
+                            ></ul>
                         </div>
-                        <div class="calo-detail"></div>
+                        <div
+                            class="calo-detail font-semibold py-[0px] pb-[20px] flex flex-wrap gap-[20px] columns-2 ml-[20px]"
+                        ></div>
                     </div>
                     <div class="flex justify-between items-center">
                         <div id="detail-price" class="text-red-500 text-[20px] font-semibold"></div>
                         <button
+                            id="cart-add"
                             class="flex items-center bg-ye rounded-[10px] hover:bg-theme text-white pr-[10px]"
                         >
                             <div id="buy-cart-btn" class="w-[40px] h-[40px] flex-center">

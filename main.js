@@ -274,6 +274,10 @@ scrollMenuContainer.addEventListener('wheel', (e) => {
 
 const detailEles = document.getElementsByClassName('detail-dish');
 
+const capitalize = (string) => {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+};
+
 const showModal = (element) => {
     const container = document.getElementById('modal-container');
     // container.replaceChildren();
@@ -296,13 +300,15 @@ const showModal = (element) => {
             detailElement.replaceChildren();
             Object.entries(value).forEach(([key, infoValue]) => {
                 const detailNameEle = document.createElement('span');
+                detailNameEle.textContent = key;
                 detailNameEle.classList.add('detail-name');
                 const detailUl = document.createElement('ul');
                 detailUl.classList.add('detail-ul');
+                detailUl.appendChild(detailNameEle);
 
                 Object.entries(infoValue).forEach(([infoValueKey, detailInfo]) => {
                     const detailItem = document.createElement('li');
-                    detailItem.textContent = infoValueKey + ': ' + detailInfo;
+                    detailItem.innerHTML = '<span>' + infoValueKey + '</span>' + ': ' + detailInfo;
                     detailUl.appendChild(detailItem);
                 });
 
@@ -311,9 +317,10 @@ const showModal = (element) => {
         } else if (key === 'price') {
             const priceEle = document.getElementById('detail-price');
             priceEle.textContent = value + '.000 đ';
+        } else if (key === 'id') {
         } else {
             const caloItem = document.createElement('li');
-            caloItem.textContent = key + ': ' + value;
+            caloItem.innerHTML = '<span>' + capitalize(key) + '</span>' + ': ' + value;
             calo.appendChild(caloItem);
         }
     }
@@ -331,5 +338,9 @@ const showInfo = (element) => {
 });
 
 document.getElementById('modal-close').addEventListener('click', () => {
+    rootModal.style.display = 'none';
+});
+
+document.getElementById('cart-add').addEventListener('click', () => {
     rootModal.style.display = 'none';
 });

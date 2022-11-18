@@ -3,7 +3,7 @@
 }
 
 .avia-menu-text {
-    color: var(--main) !important;
+    color: #333 !important;
     font-weight: 700;
 }
 
@@ -35,7 +35,7 @@
 #top .avia-font-entypo-fontello,
 body .avia-font-entypo-fontello,
 html body [data-av_iconfont='entypo-fontello']:before {
-    color: var(--main) !important;
+    color: #333 !important;
 }
 
 #top #header .av-main-nav > li > a {
@@ -69,6 +69,22 @@ html body [data-av_iconfont='entypo-fontello']:before {
     color: white !important;
     font-size: 15px;
     border-radius: 6px;
+}
+
+.detail-ul {
+    width: 40%;
+    list-style: disc;
+}
+
+.detail-ul span {
+    font-weight: normal;
+}
+
+.detail-name {
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: #f7b930;
+    text-decoration: underline;
 }
 
 .wpb_text_column.wpb_content_element p {
