@@ -1,7 +1,7 @@
 const menus = [
     {
         id: 1,
-        name: 'Khoai tây nghiền gà BBQ sốt ngọt',
+        name: 'Khoai tây nghiền gà BBQ mè rang',
         img: './assets/khoai tay nghien ga bbq sot ngot.jpg',
         calo: 580,
         protein: '31g',
@@ -123,7 +123,7 @@ const menus = [
     },
     {
         id: 5,
-        name: 'Khoai lang gà ngũ vị sốt ngọt',
+        name: 'Khoai lang gà ngũ vị sốt mè rang',
         img: './assets/khoai lang ga ngu vi sot ngot.jpg',
         calo: 463,
         protein: '31g',
@@ -263,9 +263,7 @@ const menus = [
     },
 ];
 
-const scrollMenuContainer = document.getElementById('menu-container');
-const rootModal = document.getElementById('root-modal');
-rootModal.style.display = 'none';
+const scrollMenuContainer = document.getElementById('products');
 
 scrollMenuContainer.addEventListener('wheel', (e) => {
     e.preventDefault();
@@ -278,69 +276,7 @@ const capitalize = (string) => {
     return string.charAt(0).toUpperCase() + string.slice(1);
 };
 
-const showModal = (element) => {
-    const container = document.getElementById('modal-container');
-    // container.replaceChildren();
-
-    const id = element.getAttribute('id');
-    const info = menus.find((i) => i.id == id);
-
-    const calo = container.querySelector('.calo');
-    calo.replaceChildren();
-
-    for (let key in info) {
-        let value = info[key];
-
-        if (key === 'name') {
-            document.getElementById('detail-item-name').textContent = value;
-        } else if (key === 'img') {
-            document.getElementById('detail-image').src = value;
-        } else if (key === 'detail') {
-            const detailElement = container.querySelector('.calo-detail');
-            detailElement.replaceChildren();
-            Object.entries(value).forEach(([key, infoValue]) => {
-                const detailNameEle = document.createElement('span');
-                detailNameEle.textContent = key;
-                detailNameEle.classList.add('detail-name');
-                const detailUl = document.createElement('ul');
-                detailUl.classList.add('detail-ul');
-                detailUl.appendChild(detailNameEle);
-
-                Object.entries(infoValue).forEach(([infoValueKey, detailInfo]) => {
-                    const detailItem = document.createElement('li');
-                    detailItem.innerHTML = '<span>' + infoValueKey + '</span>' + ': ' + detailInfo;
-                    detailUl.appendChild(detailItem);
-                });
-
-                detailElement.appendChild(detailUl);
-            });
-        } else if (key === 'price') {
-            const priceEle = document.getElementById('detail-price');
-            priceEle.textContent = value + '.000 đ';
-        } else if (key === 'id') {
-        } else {
-            const caloItem = document.createElement('li');
-            caloItem.innerHTML = '<span>' + capitalize(key) + '</span>' + ': ' + value;
-            calo.appendChild(caloItem);
-        }
-    }
-
-    rootModal.style.setProperty('display', 'block', 'important');
-};
-
 const showInfo = (element) => {
     const cloneNode = element.cloneNode(true);
     showModal(cloneNode);
 };
-
-[...detailEles].forEach((element) => {
-    element.addEventListener('click', () => showInfo(element));
-});
-
-document.getElementById('modal-close').addEventListener('click', () => {
-    rootModal.style.display = 'none';
-});
-
-document.getElementById('cart-add').addEventListener('click', () => {
-    rootModal.style.display = 'none';
-});

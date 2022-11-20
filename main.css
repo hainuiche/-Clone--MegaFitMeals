@@ -2,6 +2,23 @@
     --main: #88c544;
 }
 
+html,
+body {
+    height: 100%;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .avia-menu-text {
     color: #333 !important;
     font-weight: 700;
@@ -115,4 +132,12 @@ body {
 
 .menu-shadow {
     box-shadow: rgb(247, 184, 48, 0.5) 0px 4px 25px 1px;
+}
+
+.woocommerce-mini-cart-item {
+    cursor: pointer;
+}
+
+.inner_sidebar {
+    margin-right: 20px !important;
 }
