@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script>
+            tailwind.config = {
+                important: true,
+                theme: {
+                    extend: {
+                        colors: {
+                            theme: '#F67300',
+                            ye: '#F8BA30',
+                            'ye-hov': '#fbf6d6',
+                            light: '#FFF9EB',
+                            drop: '#F2F2F2',
+                            main: '#88c544',
+                        },
+                    },
+                },
+            };
+        </script>
+        <link rel="stylesheet" type="text/css" href="./main.css" />
+        <title>Sincere food</title>
+    </head>
+    <body>
+        <div class="h-full bg-[#727272] text-[#333] font-semibold text-[20px]">
+            <div
+                class="p-[40px] flex flex-col gap-[40px] bg-[#fff] rounded-[8px] absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 h-[40%] w-[90%]"
+            >
+                <a
+                    href="./TDEE.html"
+                    class="bg-main flex-1 rounded-[8px] px-[20px] flex justify-between items-center hover:bg-ye duration-300 cursor-pointer"
+                >
+                    <p>Tính TDEE</p>
+                    <img class="w-[48px] h-[48px]" src="./assets/note.png" />
+                </a>
+                <a
+                    href="./menu2.html"
+                    class="bg-main flex-1 rounded-[8px] px-[20px] flex justify-between items-center hover:bg-ye duration-300 cursor-pointer"
+                >
+                    <p>Đặt món ngay</p>
+                    <img class="w-[48px] h-[48px]" src="./assets/foodcart.png" />
+                </a>
+            </div>
+        </div>
+    </body>
+</html>

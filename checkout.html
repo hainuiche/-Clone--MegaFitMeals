@@ -1,12 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <body>
-    Yêu bẹn *3000
-  </body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Checkout</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link rel="stylesheet" type="text/css" href="./main.css" />
+        <script>
+            tailwind.config = {
+                important: true,
+                theme: {
+                    extend: {
+                        colors: {
+                            theme: '#F67300',
+                            ye: '#F8BA30',
+                            'ye-hov': '#fbf6d6',
+                            light: '#FFF9EB',
+                            drop: '#F2F2F2',
+                            main: '#88c544',
+                        },
+                    },
+                },
+            };
+        </script>
+    </head>
+    <body class="flex flex-col bg-[#F7F3F2]">
+        <div class="p-[10px] text-[#158d00]">
+            <a
+                href="menu2.html"
+                class="flex p-[10px] gap-[8px] bg-[#F7F3F2] hover:bg-[#ccc] cursor-pointer w-fit rounded-[8px]"
+                ><svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="w-6 h-6"
+                >
+                    <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M9 15L3 9m0 0l6-6M3 9h12a6 6 0 010 12h-3"
+                    />
+                </svg>
+                Tiếp tục đặt món</a
+            >
+        </div>
+        <div class="flex justify-center p-[20px]">
+            <div class="w-full md:w-[544px] rounded-[8px] bg-white p-[20px] space-y-[20px]">
+                <div class="flex items-center gap-[12px]">
+                    <div
+                        class="w-[32px] h-[32px] flex-center text-white font-semibold rounded-full bg-theme"
+                    >
+                        1
+                    </div>
+                    <p class="font-semibold">Thông tin quý khách</p>
+                </div>
+                <div class="space-x-[10px] flex">
+                    <input
+                        class="p-[5px] w-1/2 border border-solid border-[#ccc] rounded-[4px]"
+                        placeholder="Tên người nhận"
+                    />
+                    <input
+                        class="p-[5px] w-1/2 border border-solid border-[#ccc] rounded-[4px]"
+                        placeholder="Số điện thoại"
+                    />
+                </div>
+                <textarea
+                    class="w-full border border-solid border-[#ccc] rounded-[4px] p-[5px] h-[80px]"
+                    placeholder="Ghi chú cho đơn hàng này"
+                ></textarea>
+                <div class="space-x-[10px] flex">
+                    <input
+                        class="p-[5px] w-1/2 border border-solid border-[#ccc] rounded-[4px]"
+                        placeholder="Ngày lấy hàng"
+                    />
+                    <input
+                        class="p-[5px] w-1/2 border border-solid border-[#ccc] rounded-[4px]"
+                        placeholder="Giờ lấy hàng"
+                    />
+                </div>
+                <p>Lưu ý: Chúng tôi sẽ gọi lại cho bạn để xác nhận đơn hàng.</p>
+            </div>
+        </div>
+        <div class="flex justify-center bg-[#F7F3F2] p-[20px]">
+            <div class="w-full md:w-[544px] rounded-[8px] bg-white p-[20px] space-y-[20px]">
+                <div class="flex items-center gap-[12px]">
+                    <div
+                        class="w-[32px] h-[32px] flex-center text-white font-semibold rounded-full bg-theme"
+                    >
+                        2
+                    </div>
+                    <p class="font-semibold">Thanh toán</p>
+                </div>
+                <div
+                    class="border border-solid rounded-[4px] border-[#158d00] p-[16px] flex items-center gap-[20px]"
+                >
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke-width="1.5"
+                        stroke="currentColor"
+                        class="w-10 h-10 text-[#158d00]"
+                    >
+                        <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                        />
+                    </svg>
+                    <p class="text-[16px] font-semibold">Thanh toán bằng tiền mặt khi nhận hàng</p>
+                </div>
+                <a
+                    class="cursor-pointer block bg-[#158d00] rounded-[8px] px-[20px] py-[10px] text-center font-semibold text-[16px] text-white"
+                    >Xác nhận và đặt hàng</a
+                >
+            </div>
+        </div>
+    </body>
 </html>
