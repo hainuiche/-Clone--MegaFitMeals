@@ -8,6 +8,20 @@
         <meta charset="UTF-8" />
         <link rel="stylesheet" type="text/css" href="./main.css" />
         <script type="text/javascript">
+            window.onload = () => {
+                const observer = new MutationObserver(function (mutations) {
+                    mutations.forEach((mutate) => {
+                        const target = mutate?.target;
+                        if (target?.id === 'tidio-chat') {
+                            target.remove();
+                        }
+                    });
+                });
+
+                observer.observe(document.body, { subtree: true, childList: true });
+            };
+        </script>
+        <script type="text/javascript">
             var gform;
             gform ||
                 (document.addEventListener('gform_main_scripts_loaded', function () {
