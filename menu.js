@@ -282,6 +282,11 @@ const showModal = (element) => {
     const calo = container.querySelector('.calo');
     calo.replaceChildren();
 
+    const goalVal = localStorage.getItem('goal');
+    const carbVal = Math.ceil((55 / 100) * goalVal);
+    const proteinVal = Math.ceil((20 / 100) * goalVal);
+    const fatVal = Math.ceil((20 / 100) * goalVal);
+
     for (let key in info) {
         let value = info[key];
 
@@ -316,10 +321,37 @@ const showModal = (element) => {
             const caloItem = document.createElement('li');
             caloItem.innerHTML = '<span>' + capitalize(key) + '</span>' + ': ' + value;
             calo.appendChild(caloItem);
+
+            switch (key) {
+                case 'calo':
+                    addProgressEle(calo, value, goalVal);
+                    break;
+                case 'carb':
+                    addProgressEle(calo, value.slice(0, -1), carbVal);
+                    break;
+                case 'fat':
+                    addProgressEle(calo, value.slice(0, -1), fatVal);
+                    break;
+                case 'protein':
+                    addProgressEle(calo, value.slice(0, -1), proteinVal);
+                    break;
+            }
         }
     }
 
     rootModal.style.setProperty('display', 'block', 'important');
+};
+
+const addProgressEle = (root, val, total) => {
+    const progressLi = document.createElement('li');
+    progressLi.classList.add('progress');
+    progressLi.style.marginBottom = '4px';
+    const realProgress = document.createElement('div');
+    realProgress.style.height = '100%';
+    realProgress.style.width = (+val / total) * 100 + '%';
+    realProgress.style.backgroundColor = '#88c544';
+    progressLi.appendChild(realProgress);
+    root.appendChild(progressLi);
 };
 
 const showInfo = (element) => {
@@ -327,12 +359,22 @@ const showInfo = (element) => {
     showModal(cloneNode);
 };
 
+const closeModal = () => {
+    rootModal.style.setProperty('display', 'none', 'important');
+};
+
 [...detailEles].forEach((element) => {
     element.addEventListener('click', () => showInfo(element));
 });
 
 document.getElementById('modal-close').addEventListener('click', () => {
-    rootModal.style.display = 'none';
+    closeModal();
+});
+
+document.addEventListener('click', (e) => {
+    if (e.target.id === 'modal-backdrop') {
+        closeModal();
+    }
 });
 
 document.getElementById('cart-add').addEventListener('click', () => {

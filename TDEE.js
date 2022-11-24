@@ -13206,21 +13206,21 @@ if ('undefined' == typeof jQuery) throw new Error("Bootstrap's JavaScript requir
                             goalDate = moment().add(daysToGoal, 'days');
                             $('#goal_date').html(goalDate.format('ddd, D MMM, YYYY'));
                             weeksToGoal = Math.floor(daysToGoal / 7);
-                            weeksLabel = weeksToGoal === 1 ? ' tuáº§n ' : ' tuáº§n ';
+                            weeksLabel = weeksToGoal === 1 ? ' tuần ' : ' tuần ';
                             daysMinusWeeksToGoal = daysToGoal % 7;
                             daysLabel = daysMinusWeeksToGoal;
-                            daysLabel += daysMinusWeeksToGoal === 1 ? ' ngÃ y ' : ' ngÃ y ';
+                            daysLabel += daysMinusWeeksToGoal === 1 ? ' ngày ' : ' ngày ';
                             if (daysMinusWeeksToGoal === 0) {
                                 daysLabel = '';
                             }
-                            goalDateWeeksLabel =
-                                'hoáº·c, ' + weeksToGoal + weeksLabel + daysLabel + 'tá»« hÃ´m nay';
+                            goalDateWeeksLabel = '' + weeksToGoal + weeksLabel + daysLabel + '';
                             $('#goal_date_weeks').html(goalDateWeeksLabel);
                         } else if (that.goal === 'gain') {
                             gain_speed = $('input[name=gain_speed]:checked').val();
                             goalVal = tdee * (1 + that.gainSpeedValues[gain_speed]);
                         }
                         goalVal = Math.max(goalVal, goalMin);
+                        localStorage.setItem('goal', Math.ceil(goalVal));
                         $('#goal_val').html(Math.round(goalVal));
                         warningClassMethod = goalVal === goalMin ? 'removeClass' : 'addClass';
                         $('#results_goal .caption i')[warningClassMethod]('hide');

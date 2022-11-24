@@ -141,3 +141,22 @@ body {
 .inner_sidebar {
     margin-right: 20px !important;
 }
+
+.food-item-modal {
+    width: 500px;
+}
+
+@media only screen and (max-width: 767px) {
+    .avia-standard-logo img {
+        max-height: 140px !important;
+    }
+
+    .food-item-modal {
+        width: 96% !important;
+    }
+}
+
+.progress {
+    height: 8px;
+    border: 1px solid #333;
+}

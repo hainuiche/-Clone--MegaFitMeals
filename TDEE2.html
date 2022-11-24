@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html class="h-full" lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>TDEE</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+    </head>
+    <body class="h-full bg-[#e4e8e9] flex items-center justify-center">
+        <div class="bg-white rounded-[8px] w-[90%] lg:w-[900px] p-[30px] space-y-[10px]">
+            <p class="text-[18px] font-bold text-center">TDEE của bạn là <span id="goal"></span></p>
+            <p id="detail-goal" class="text-center"></p>
+            <a
+                href="menu2.html"
+                class="block w-fit mx-auto px-[20px] py-[10px] rounded-[8px] bg-[#88c544]"
+                >Tiếp theo</a
+            >
+        </div>
+    </body>
+    <script>
+        const goalVal = localStorage.getItem('goal');
+        document.getElementById('goal').textContent = goalVal;
+
+        document.getElementById('detail-goal').innerHTML =
+            '<p>' +
+            'Để đạt được mục tiêu tăng cân bình thường, bạn cần ' +
+            goalVal +
+            ' calories 1 ngày</p><p>' +
+            'Macro: 55% Carb, 20% Protein, 25% Fat. </p><p>' +
+            '1 ngày cần ' +
+            Math.ceil((55 / 100) * goalVal) +
+            'g carb, ' +
+            Math.ceil((20 / 100) * goalVal) +
+            'g protein, ' +
+            Math.ceil((25 / 100) * goalVal) +
+            'g fat' +
+            '</p>';
+    </script>
+</html>
