@@ -282,7 +282,7 @@ const showModal = (element) => {
     const calo = container.querySelector('.calo');
     calo.replaceChildren();
 
-    const goalVal = localStorage.getItem('goal');
+    const goalVal = localStorage.getItem('goal') || 1600;
     const carbVal = Math.ceil((55 / 100) * goalVal);
     const proteinVal = Math.ceil((20 / 100) * goalVal);
     const fatVal = Math.ceil((20 / 100) * goalVal);

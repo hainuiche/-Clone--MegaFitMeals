@@ -146,6 +146,15 @@ body {
     width: 500px;
 }
 
+.custom-menu {
+    width: 400px;
+}
+
+.custom-menu-container {
+    display: flex !important;
+    flex-direction: row;
+}
+
 @media only screen and (max-width: 767px) {
     .avia-standard-logo img {
         max-height: 140px !important;
@@ -154,9 +163,22 @@ body {
     .food-item-modal {
         width: 96% !important;
     }
+
+    .custom-menu {
+        width: 100%;
+    }
+
+    .custom-menu-container {
+        flex-direction: column;
+    }
 }
 
 .progress {
     height: 8px;
     border: 1px solid #333;
+}
+
+#wrap_all {
+    overflow: auto !important;
+    background-color: white !important;
 }
