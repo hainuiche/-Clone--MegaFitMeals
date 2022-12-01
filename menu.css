@@ -71,18 +71,22 @@ tr {
 }
 
 .td-img {
-    width: 200px;
-    height: auto;
+    width: 100%;
+    height: fit-content;
     border-radius: 8px;
 }
 
 .td-has-img {
     /* width: 200px; */
     position: relative;
-    height: 50%;
 }
 
 .td-has-img span {
     position: absolute;
     margin-left: 8px;
+}
+
+.td-has-calo {
+    text-align: center;
+    font-weight: 600;
 }

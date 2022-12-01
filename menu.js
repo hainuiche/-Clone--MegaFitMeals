@@ -318,21 +318,21 @@ const showModal = (element) => {
             priceEle.textContent = value + '.000 đ';
         } else if (key === 'id') {
         } else {
-            const caloItem = document.createElement('li');
-            caloItem.innerHTML = '<span>' + capitalize(key) + '</span>' + ': ' + value;
-            calo.appendChild(caloItem);
-
             switch (key) {
                 case 'calo':
+                    addPercentEle(calo, key, value, value, goalVal);
                     addProgressEle(calo, value, goalVal);
                     break;
                 case 'carb':
+                    addPercentEle(calo, key, value, value.slice(0, -1), carbVal);
                     addProgressEle(calo, value.slice(0, -1), carbVal);
                     break;
                 case 'fat':
+                    addPercentEle(calo, key, value, value.slice(0, -1), fatVal);
                     addProgressEle(calo, value.slice(0, -1), fatVal);
                     break;
                 case 'protein':
+                    addPercentEle(calo, key, value, value.slice(0, -1), proteinVal);
                     addProgressEle(calo, value.slice(0, -1), proteinVal);
                     break;
             }
@@ -342,16 +342,35 @@ const showModal = (element) => {
     rootModal.style.setProperty('display', 'block', 'important');
 };
 
+const addPercentEle = (root, key, value, val, total) => {
+    const caloItem = document.createElement('li');
+    caloItem.style.position = 'relative';
+    caloItem.innerHTML =
+        '<span>' +
+        capitalize(key) +
+        '</span>' +
+        ': ' +
+        value +
+        "<span class='progress-number'>" +
+        calculatePercent(val, total) +
+        '</span>';
+    root.appendChild(caloItem);
+};
+
 const addProgressEle = (root, val, total) => {
     const progressLi = document.createElement('li');
     progressLi.classList.add('progress');
     progressLi.style.marginBottom = '4px';
     const realProgress = document.createElement('div');
     realProgress.style.height = '100%';
-    realProgress.style.width = (+val / total) * 100 + '%';
+    realProgress.style.width = calculatePercent(val, total);
     realProgress.style.backgroundColor = '#88c544';
     progressLi.appendChild(realProgress);
     root.appendChild(progressLi);
+};
+
+const calculatePercent = (val, total) => {
+    return Math.ceil((+val / total) * 100) + '%';
 };
 
 const showInfo = (element) => {

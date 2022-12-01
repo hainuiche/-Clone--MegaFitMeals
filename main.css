@@ -179,6 +179,14 @@ body {
     .custom-menu-container {
         flex-direction: column;
     }
+
+    .logo-text-container .logo-text {
+        font-size: 34px;
+    }
+
+    .logo-text-parent {
+        margin-bottom: 140px;
+    }
 }
 
 .progress {
@@ -189,4 +197,37 @@ body {
 #wrap_all {
     overflow: auto !important;
     background-color: white !important;
+}
+
+.progress-number {
+    position: absolute;
+    right: 0;
+    top: 10px;
+    font-size: 11px;
+}
+
+rs-slides {
+    display: none;
+}
+
+@font-face {
+    font-family: broadway;
+    src: url('./assets/Broadway-Regular.ttf');
+}
+
+@font-face {
+    font-family: iCieICB;
+    src: url('./assets/iCielBCDowntown-Regular.otf');
+}
+
+.logo-text {
+    font-family: broadway;
+}
+
+.slogan-text {
+    font-family: iCieICB;
+}
+
+.vc_row[data-vc-full-width].vc_hidden {
+    opacity: 1 !important;
 }

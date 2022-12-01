@@ -13220,7 +13220,7 @@ if ('undefined' == typeof jQuery) throw new Error("Bootstrap's JavaScript requir
                             goalVal = tdee * (1 + that.gainSpeedValues[gain_speed]);
                         }
                         goalVal = Math.max(goalVal, goalMin);
-                        localStorage.setItem('goal', Math.ceil(goalVal));
+                        localStorage.setItem('goal', 2666);
                         $('#goal_val').html(Math.round(goalVal));
                         warningClassMethod = goalVal === goalMin ? 'removeClass' : 'addClass';
                         $('#results_goal .caption i')[warningClassMethod]('hide');

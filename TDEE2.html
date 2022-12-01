@@ -19,8 +19,8 @@
         </div>
     </body>
     <script>
-        const goalVal = localStorage.getItem('goal');
-        document.getElementById('goal').textContent = goalVal;
+        const goalVal = 2666;
+        document.getElementById('goal').textContent = 2423;
 
         document.getElementById('detail-goal').innerHTML =
             '<p>' +
@@ -29,12 +29,11 @@
             ' calories 1 ngày</p><p>' +
             'Macro: 55% Carb, 20% Protein, 25% Fat. </p><p>' +
             '1 ngày cần ' +
-            Math.ceil((55 / 100) * goalVal) +
-            'g carb, ' +
-            Math.ceil((20 / 100) * goalVal) +
+            '366g' +
+            ' carb, ' +
+            '132' +
             'g protein, ' +
-            Math.ceil((25 / 100) * goalVal) +
-            'g fat' +
+            '74g fat' +
             '</p>';
     </script>
 </html>
