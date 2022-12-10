@@ -30,7 +30,7 @@ const menus = [
     },
     {
         id: 2,
-        name: 'Món chay',
+        name: 'Thịt chay rau củ',
         img: './assets/mon chay.jpg',
         calo: 645,
         protein: '25g',
@@ -67,7 +67,7 @@ const menus = [
     },
     {
         id: 3,
-        name: 'Cơm lá chanh gà BBQ sốt cay',
+        name: 'Cơm lá chanh, gà BBQ sốt thousand island',
         img: './assets/com la chanh ga bbq sot cay.jpg',
         calo: 663,
         protein: '34g',
@@ -100,7 +100,7 @@ const menus = [
         protein: '31g',
         carb: '67g',
         fat: '18g',
-        price: '60',
+        price: '65',
         detail: {
             'beef tenderloin': {
                 gam: '100g',
@@ -162,7 +162,7 @@ const menus = [
         protein: '34.7g',
         carb: '77.5g',
         fat: '27g',
-        price: '60',
+        price: '65',
         detail: {
             vegetable: {
                 gam: '100g',
@@ -190,7 +190,7 @@ const menus = [
     },
     {
         id: 7,
-        name: 'Pasta bò nướng sốt kem',
+        name: 'Pasta, bò nướng sốt kem',
         img: './assets/pasta bo nuong sot kem.jpg',
         calo: 492,
         protein: '31.7g',
@@ -222,12 +222,12 @@ const menus = [
     },
     {
         id: 8,
-        name: 'Cơm lá chanh bò nướng sôt bơ',
+        name: 'Cơm lá chanh bò nướng sốt bơ',
         img: './assets/com la chanh bo nuong sot bo.jpg',
         calo: 645,
         protein: '34.5g',
         fat: '19.5g',
-        price: '60',
+        price: '65',
         detail: {
             'jasmine rice': {
                 gam: '269g',
@@ -253,7 +253,7 @@ const menus = [
     },
     {
         id: 9,
-        name: 'Donut',
+        name: 'Bánh Donut',
         img: './assets/donut.jpg',
         calo: 220,
         protein: '2g',

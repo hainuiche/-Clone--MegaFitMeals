@@ -1970,7 +1970,9 @@
                 box-sizing: border-box !important;
             }
             .gform_legacy_markup_wrapper
-                input:not([type='radio']):not([type='checkbox']):not([type='submit']):not([type='button']):not([type='image']):not([type='file']) {
+                input:not([type='radio']):not([type='checkbox']):not([type='submit']):not(
+                    [type='button']
+                ):not([type='image']):not([type='file']) {
                 font-size: inherit;
                 font-family: inherit;
                 padding: 5px 4px;
@@ -2018,7 +2020,9 @@
             }
             .gform_legacy_markup_wrapper
                 .ginput_complex
-                input:not([type='radio']):not([type='checkbox']):not([type='submit']):not([type='image']):not([type='file']) {
+                input:not([type='radio']):not([type='checkbox']):not([type='submit']):not(
+                    [type='image']
+                ):not([type='file']) {
                 width: 100%;
             }
             body .gform_legacy_markup_wrapper .top_label div.ginput_container {
@@ -2110,7 +2114,9 @@
             }
             @media only screen and (max-width: 641px) {
                 .gform_legacy_markup_wrapper
-                    input:not([type='radio']):not([type='checkbox']):not([type='image']):not([type='file']) {
+                    input:not([type='radio']):not([type='checkbox']):not([type='image']):not(
+                        [type='file']
+                    ) {
                     line-height: 2;
                     min-height: 2rem;
                 }
@@ -7296,32 +7302,29 @@ PLAu:64
                                                                             title="Home"
                                                                         />
                                                                     </rs-layer>
-                                                                    <div
-                                                                        class="h-full inset-0 justify-center logo-text-container"
-                                                                    >
-                                                                        <div
-                                                                            class="mx-auto top-1/2 mt-[150px] -translate-y-1/2 text-black flex flex-col items-center logo-text-parent"
-                                                                        >
-                                                                            <p
-                                                                                class="logo-text text-[100px] font-bold text-theme"
-                                                                            >
-                                                                                Sincere
-                                                                            </p>
-                                                                            <p
-                                                                                class="slogan-text text-[20px] font-semibold text-theme"
-                                                                            >
-                                                                                Bữa ăn cho vóc dáng
-                                                                                và dinh dưỡng
-                                                                            </p>
-                                                                            <a
-                                                                                href="./menu2.html"
-                                                                                class="cursor-pointer px-[20px] py-[10px] rounded-full font-bold hover:no-underline text-[20px] block mt-[30px] bg-theme w-fit hover:opacity-80 italic !text-[#fff]"
-                                                                            >
-                                                                                Chọn món ngay
-                                                                            </a>
-                                                                        </div>
-                                                                    </div>
                                                                 </rs-static-layers>
+                                                                <div
+                                                                    class="mt-[200px] text-black flex flex-col items-center logo-text-parent"
+                                                                >
+                                                                    <p
+                                                                        class="logo-text text-[100px] font-bold text-theme"
+                                                                    >
+                                                                        Sincere
+                                                                    </p>
+                                                                    <p
+                                                                        class="slogan-text text-[20px] font-semibold text-theme"
+                                                                    >
+                                                                        Bữa ăn cho vóc dáng và dinh
+                                                                        dưỡng
+                                                                    </p>
+                                                                    <a
+                                                                        href="./menu2.html"
+                                                                        style="z-index: 999"
+                                                                        class="cursor-pointer px-[20px] py-[10px] rounded-full font-bold hover:no-underline text-[20px] block mt-[30px] bg-theme w-fit hover:opacity-80 italic !text-[#fff]"
+                                                                    >
+                                                                        Chọn món ngay
+                                                                    </a>
+                                                                </div>
                                                             </rs-module>
                                                         </rs-module-wrap>
                                                         <!-- END REVOLUTION SLIDER -->
@@ -9426,6 +9429,7 @@ PLAu:64
                 type="text/css"
                 media="all"
         /></noscript>
+
         <script src="./main.js"></script>
     </body>
     <script type="text/javascript">
@@ -9441,5 +9445,3 @@ PLAu:64
         observer.observe(document.body, { subtree: true, childList: true });
     </script>
 </html>
-
-<!-- This website is like a Rocket, isn't it? Performance optimized by WP Rocket. Learn more: https://wp-rocket.me --
