@@ -231,3 +231,10 @@ rs-slides {
 .vc_row[data-vc-full-width].vc_hidden {
     opacity: 1 !important;
 }
+
+.av-product-class- {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
